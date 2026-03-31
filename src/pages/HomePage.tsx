@@ -93,9 +93,9 @@ const HomePage = () => {
       <section className="px-4 sm:px-8 py-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
         
         <div className="lg:w-1/3 lg:sticky lg:top-32 space-y-4">
-          <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 leading-[1.15]">Quickly Expand your Workforce.</h2>
+          <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 leading-[1.15]">Dive into Interactive Learning.</h2>
           <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-            Take advantage of our global employment products to hire who you want, wherever you want - starting in just minutes
+            Stop guessing about your future. Use our analytical tools and AI advisors to find the perfect stream and college for your personality.
           </p>
         </div>
         
@@ -238,7 +238,7 @@ const HomePage = () => {
                  </div>
                  <h3 className="text-xl font-medium text-gray-900 mb-2">{ls.title}</h3>
                  <p className="text-gray-500 text-sm mb-6 flex-1 line-clamp-3">{ls.summary}</p>
-                 <Button as={Link} to={`/stream/${mapStreamToSlug(stream.id)}`} variant="outline" className="w-full justify-between group-hover:bg-gray-900 group-hover:text-gray-900 group-hover:border-gray-900">
+                 <Button as={Link} to={`/stream/${mapStreamToSlug(stream.id)}`} variant="outline" className="w-full justify-between group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition-all">
                     Explore <ArrowRight size={16} />
                  </Button>
               </div>
