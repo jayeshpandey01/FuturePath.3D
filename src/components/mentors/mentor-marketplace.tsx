@@ -2,13 +2,14 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/shadcn/card"
+import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/shadcn/card"
 import { Button } from "@/components/ui/shadcn/button"
 import { Badge } from "@/components/ui/shadcn/badge"
 import { Input } from "@/components/ui/shadcn/input"
-import { Search, Star, MessageSquare, Calendar, ArrowRight, Filter, SlidersHorizontal, MapPin, Briefcase, GraduationCap, X, CheckCircle2, Clock, Zap } from "lucide-react"
+import { Search, Star, MessageSquare, Calendar, ArrowRight, SlidersHorizontal, MapPin, Briefcase, GraduationCap, X, CheckCircle2, Clock, Zap, Loader2 } from "lucide-react"
 import { mentors, type Mentor } from "@/services/mentorService"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/shadcn/dialog"
+import { cn } from "@/lib/utils"
 
 export function MentorMarketplace() {
   const [searchTerm, setSearchTerm] = useState("")
