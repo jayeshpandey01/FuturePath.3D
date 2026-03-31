@@ -8,7 +8,7 @@ import { t } from "../i18n/messages";
 import { SearchModal } from "../components/SearchModal";
 import { useAuthStore } from "../store/useAuthStore";
 
-const links = [
+const mainLinks = [
   { to: "/", labelKey: "nav_home" },
   { to: "/streams", labelKey: "nav_streams" },
   { to: "/departments", labelKey: "nav_departments" },
@@ -19,12 +19,14 @@ const links = [
   { to: "/resume-builder", labelKey: "nav_resume" },
 ];
 
-const menuLinks = [
-  ...links,
-  { to: "/cover-letter", labelKey: "nav_cover_letter" },
+const careerToolsLinks = [
   { to: "/career-ai", labelKey: "nav_chatbot" },
   { to: "/mentors", labelKey: "nav_mentors" },
   { to: "/mock-interview", labelKey: "nav_interview" },
+  { to: "/cover-letter", labelKey: "nav_cover_letter" },
+];
+
+const platformLinks = [
   { to: "/future-jobs", labelKey: "nav_career" },
   { to: "/services", labelKey: "nav_services" },
   { to: "/about", labelKey: "nav_about" },
@@ -56,7 +58,7 @@ const Navbar = () => {
         {/* Center Links */}
         <div className="hidden xl:flex flex-1 items-center justify-center gap-4 min-w-0">
           <nav className="flex items-center gap-4 text-[13px] font-medium text-gray-600">
-            {links.map((item) => (
+            {mainLinks.map((item: { to: string; labelKey: string }) => (
               <NavLink
                 key={item.to}
                 to={item.to}
@@ -138,31 +140,79 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            className="absolute right-4 sm:right-8 top-20 w-64 bg-white rounded-3xl shadow-card border border-gray-100 overflow-hidden z-50 origin-top-right backdrop-blur-xl"
+            className="absolute right-4 sm:right-8 top-20 w-64 bg-white rounded-3xl shadow-card border border-gray-100 overflow-hidden z-50 origin-top-right backdrop-blur-xl max-h-[85vh] overflow-y-auto"
           >
-            <div className="p-3 flex flex-col gap-1">
-              {menuLinks.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) => 
-                    `px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-gray-50 ${isActive ? "text-black bg-gray-50/50" : "text-gray-600 hover:text-black"}`
-                  }
-                  onClick={() => setOpen(false)}
-                >
-                  {t(lang, item.labelKey as any)}
-                </NavLink>
-              ))}
-              <div className="h-px bg-gray-100 my-1 mx-2" />
-              {user ? (
-                <Button variant="outline" className="justify-center mt-1 w-full gap-2 rounded-xl border-red-100 text-red-500 hover:bg-red-50" onClick={handleLogout}>
-                  Logout <LogOut size={16} />
-                </Button>
-              ) : (
-                <Button as={Link} to="/admin" variant="primary" className="justify-center mt-1 w-full gap-2 rounded-xl" onClick={() => setOpen(false)}>
-                  Login <ArrowUpRight size={16} />
-                </Button>
-              )}
+            <div className="p-3 flex flex-col gap-5">
+              {/* Category 1: Tools & Services (Not in main navbar) */}
+              <div className="space-y-1.5">
+                <div className="px-4 py-2 text-[10px] font-black uppercase text-primary tracking-[0.2em] opacity-80">
+                  Career Tools
+                </div>
+                {careerToolsLinks.map((item: { to: string, labelKey: string }) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className={({ isActive }) => 
+                      `px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-gray-50 flex items-center justify-between ${isActive ? "text-primary bg-primary/5" : "text-gray-600 hover:text-black"}`
+                    }
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(lang, item.labelKey as any)}
+                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-40 transition-opacity" />
+                  </NavLink>
+                ))}
+              </div>
+
+              {/* Category 2: Platform Main */}
+              {/* <div className="space-y-1.5">
+                <div className="px-4 py-2 text-[10px] font-black uppercase text-gray-400 tracking-[0.2em]">
+                  Main Navigation
+                </div>
+                {mainLinks.map((item: { to: string, labelKey: string }) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className={({ isActive }) => 
+                      `px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-gray-50 ${isActive ? "text-black bg-gray-50/50" : "text-gray-600 hover:text-black"}`
+                    }
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(lang, item.labelKey as any)}
+                  </NavLink>
+                ))}
+              </div> */}
+
+              {/* Category 3: More Information */}
+              <div className="space-y-1.5">
+                <div className="px-4 py-2 text-[10px] font-black uppercase text-gray-400 tracking-[0.2em]">
+                   Platform
+                </div>
+                {platformLinks.map((item: { to: string, labelKey: string }) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className={({ isActive }) => 
+                      `px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-gray-50 ${isActive ? "text-black bg-gray-50/50" : "text-gray-600 hover:text-black"}`
+                    }
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(lang, item.labelKey as any)}
+                  </NavLink>
+                ))}
+              </div>
+
+              <div className="pt-2">
+                <div className="h-px bg-gray-100 my-1 mx-2 mb-4" />
+                {user ? (
+                  <Button variant="outline" className="justify-center w-full gap-2 rounded-xl border-red-100 text-red-500 hover:bg-red-50" onClick={handleLogout}>
+                    Logout <LogOut size={16} />
+                  </Button>
+                ) : (
+                  <Button as={Link} to="/admin" variant="primary" className="justify-center w-full gap-2 rounded-xl shadow-lg shadow-primary/20" onClick={() => setOpen(false)}>
+                    Login <ArrowUpRight size={16} />
+                  </Button>
+                )}
+              </div>
             </div>
           </motion.div>
         )}
