@@ -164,7 +164,7 @@ const Navbar = () => {
               </div>
 
               {/* Category 2: Platform Main */}
-              {/* <div className="space-y-1.5">
+              <div className="space-y-1.5">
                 <div className="px-4 py-2 text-[10px] font-black uppercase text-gray-400 tracking-[0.2em]">
                   Main Navigation
                 </div>
@@ -180,7 +180,7 @@ const Navbar = () => {
                     {t(lang, item.labelKey as any)}
                   </NavLink>
                 ))}
-              </div> */}
+              </div>
 
               {/* Category 3: More Information */}
               <div className="space-y-1.5">
