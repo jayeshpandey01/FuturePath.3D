@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { firebaseEnabled, firebaseSignIn, firebaseSignOut, onFirebaseAuth } from "../lib/firebase";
+import { firebaseEnabled, firebaseSignIn, firebaseSignOut, onFirebaseAuth, firebaseSignUp, firebaseSignInWithGoogle } from "../lib/firebase";
 
 const allowedAdminEmail = (import.meta.env.VITE_ADMIN_EMAIL ?? "blackpanther272007@gmail.com").toLowerCase();
 
@@ -63,7 +63,6 @@ export const useAuthStore = create<AuthState>((set) => ({
     }
     set({ loading: true, error: null });
     try {
-      const { firebaseSignUp } = await import("../lib/firebase");
       const res = await firebaseSignUp(email, password);
       set({ user: { uid: res.user.uid, email: res.user.email ?? undefined }, loading: false });
     } catch (e: any) {
@@ -77,7 +76,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     }
     set({ loading: true, error: null });
     try {
-      await import("../lib/firebase").then((m) => m.firebaseSignInWithGoogle());
+      await firebaseSignInWithGoogle();
     } catch (e: any) {
       set({ error: e.message ?? "Google login failed", loading: false });
     }
