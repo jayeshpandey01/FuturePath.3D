@@ -11,6 +11,7 @@ type AuthState = {
   signUp: (email: string, password: string) => Promise<void>;
   signInWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
+  logout: () => Promise<void>;
   init: () => void;
 };
 
@@ -82,6 +83,10 @@ export const useAuthStore = create<AuthState>((set) => ({
     }
   },
   signOut: async () => {
+    if (firebaseEnabled) await firebaseSignOut();
+    set({ user: null });
+  },
+  logout: async () => {
     if (firebaseEnabled) await firebaseSignOut();
     set({ user: null });
   },

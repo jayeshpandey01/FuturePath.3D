@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import { ResumeForm } from "./resume-form"
 import { ResumePreview } from "./resume-preview"
 import type { ResumeData } from "@/types/resume"
-import { Loader2 } from "lucide-react"
 
 const initialResumeData: ResumeData = {
   personalDetails: {

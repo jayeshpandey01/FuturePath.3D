@@ -1,10 +1,8 @@
-import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { SectionHeader } from "../components/ui/SectionHeader";
 import { streams } from "../data/streams";
 import { departments } from "../data/departments";
-import { useThemeStore } from "../store/useThemeStore";
 import { useFavoritesStore } from "../store/useFavoritesStore";
 import { useLanguageStore } from "../store/useLanguageStore";
 import { localizeStream } from "../utils/i18n";
@@ -13,11 +11,8 @@ import { mapStreamToSlug } from "./StreamsPage";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
-  const accent = useThemeStore((state) => state.accent);
-  const toggleAccent = useThemeStore((state) => state.toggleAccent);
   const favorites = useFavoritesStore();
   const lang = useLanguageStore((s) => s.lang);
-  const totalStreams = streams.length;
   const totalCourses = new Set(departments.map((d) => d.id)).size;
 
   return (

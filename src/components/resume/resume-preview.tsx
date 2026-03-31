@@ -1,7 +1,7 @@
 "use client"
 import { Card, CardContent } from "@/components/ui/shadcn/card"
 import { Button } from "@/components/ui/shadcn/button"
-import { SaveIcon, DownloadCloud, Mail, Phone, MapPin, Globe, FileText, Briefcase, GraduationCap, Code } from "lucide-react"
+import { SaveIcon, DownloadCloud, Mail, Phone, MapPin, Globe, FileText, Briefcase, GraduationCap, Code, Link as LinkIcon } from "lucide-react"
 import type { ResumeData } from "@/types/resume"
 import jsPDF from "jspdf"
 import html2canvas from "html2canvas"
@@ -93,7 +93,7 @@ export function ResumePreview({ resumeData }: ResumePreviewProps) {
                 )}
                 {resumeData.personalDetails.linkedin && (
                     <div className="flex items-center gap-1.5">
-                    <LinkedinIcon className="h-3.5 w-3.5 text-primary/70" />
+                    <LinkIcon className="h-3.5 w-3.5 text-primary/70" />
                     LinkedIn Profile
                     </div>
                 )}
