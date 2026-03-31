@@ -105,7 +105,7 @@ const HomePage = () => {
              {/* Small Card 1 */}
              <div className="bg-gray-100 rounded-[2rem] p-5 lg:p-6 flex flex-col aspect-square relative overflow-hidden group">
                <div className="inline-flex max-w-max items-center px-4 py-1.5 rounded-full border border-gray-200 text-gray-700 text-xs font-medium bg-white/70 backdrop-blur-sm shadow-sm mb-auto">
-                 Employees
+                 Mentorship
                </div>
                
                <div className="mt-8 relative z-10">
@@ -114,7 +114,7 @@ const HomePage = () => {
                     <div className="w-6 h-6 rounded-full bg-blue-100 -mr-2 border-2 border-white z-10"></div>
                     <div className="w-6 h-6 rounded-full bg-green-100 border-2 border-white"></div>
                  </div>
-                 <h3 className="text-xl font-medium text-gray-900 leading-tight">Hire an<br/>Employees</h3>
+                 <h3 className="text-xl font-medium text-gray-900 leading-tight">Start Your<br/>Journey</h3>
                </div>
                <div className="absolute bottom-5 right-5 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-900 opacity-0 group-hover:opacity-100 transition-opacity">
                  <ArrowUpRight size={14} />
@@ -129,7 +129,7 @@ const HomePage = () => {
                </div>
                
                <div className="relative z-10 mt-8">
-                 <h3 className="text-xl font-medium leading-tight">Hire a<br/>Contractor</h3>
+                 <h3 className="text-xl font-medium leading-tight">Career<br/>Library</h3>
                </div>
                <div className="absolute bottom-5 right-5 z-10 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-900 opacity-0 group-hover:opacity-100 transition-opacity">
                  <ArrowUpRight size={14} />
