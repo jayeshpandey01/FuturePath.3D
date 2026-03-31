@@ -4,7 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { ResumeForm } from "./resume-form"
 import { ResumePreview } from "./resume-preview"
-import type { ResumeData } from "@/types/resume"
+import type { ResumeData } from "../../types/resume"
 
 const initialResumeData: ResumeData = {
   personalDetails: {
