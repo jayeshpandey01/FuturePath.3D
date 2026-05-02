@@ -7,7 +7,11 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        lg: "2rem",
+      },
       screens: {
         lg: "1240px",
         xl: "1400px",
@@ -55,7 +59,8 @@ export default {
       },
       boxShadow: {
         glow: "0 0 40px rgba(0, 0, 0, 0.05)",
-        card: "0 10px 30px -10px rgba(0,0,0,0.1)",
+        card: "0 10px 40px -10px rgba(0,0,0,0.08)",
+        "card-hover": "0 20px 40px -10px rgba(0,0,0,0.12)",
       },
     },
   },

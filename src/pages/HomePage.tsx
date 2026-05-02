@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, Map, FileText, Users, Mic } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { SectionHeader } from "../components/ui/SectionHeader";
 import { streams } from "../data/streams";
@@ -44,28 +44,28 @@ const HomePage = () => {
 
       {/* Visual Block from Hero */}
       <section className="px-4 sm:px-8 mb-24 max-w-7xl mx-auto">
-         <div className="relative w-full aspect-[16/8] sm:aspect-[16/7] bg-gray-200 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden flex items-end justify-center pb-0 isolate">
+         <div className="relative w-full aspect-square sm:aspect-[16/7] bg-gray-200 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden flex items-end justify-center pb-0 isolate">
            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="Students" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50" />
            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
            
-           <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
-             <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Event</span>
-             <span className="text-sm font-medium text-gray-900">Building career &gt;</span>
-           </div>
+           <Link to="/streams" className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/90 hover:bg-white transition-colors cursor-pointer backdrop-blur-md rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2 shadow-sm">
+             <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide">Event</span>
+             <span className="text-xs sm:text-sm font-medium text-gray-900">Building career &gt;</span>
+           </Link>
            
-           <div className="absolute bottom-8 left-8 text-left max-w-lg z-10">
-             <div className="inline-flex items-center px-3 py-1 rounded-full border border-white/30 text-gray-900/90 text-xs mb-4 backdrop-blur-sm">
+           <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-left max-w-lg z-10">
+             <div className="inline-flex items-center px-3 py-1 rounded-full border border-white/30 text-gray-900/90 text-xs mb-3 sm:mb-4 backdrop-blur-sm">
                {totalCourses} Opportunities
              </div>
-             <h3 className="text-2xl sm:text-3xl text-gray-900 font-medium leading-tight mb-3">Efficiently transform your <br/> candidate experience.</h3>
-             <p className="text-gray-900/80 text-sm leading-relaxed max-w-md hidden sm:block">FuturePath 3D is the Hiring Experience Platform that automates interview scheduling to perfection, so you stay focused on the talent.</p>
+             <h3 className="text-xl sm:text-2xl md:text-3xl text-gray-900 font-medium leading-tight mb-2 sm:mb-3">Efficiently transform your <br className="hidden sm:block"/> candidate experience.</h3>
+             <p className="text-gray-900/80 text-xs sm:text-sm leading-relaxed max-w-md hidden sm:block">FuturePath 3D is the platform that automates planning to perfection, so you stay focused on your goals.</p>
            </div>
            
-           <div className="absolute top-6 right-6 bg-gray-100 backdrop-blur-md text-gray-900 border border-white/30 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm text-sm">
-             Match yours <ArrowUpRight size={14} />
-           </div>
+           <Link to="/streams" className="hidden sm:flex absolute top-6 right-6 bg-gray-100 hover:bg-white transition-colors cursor-pointer backdrop-blur-md text-gray-900 border border-white/30 rounded-full px-4 py-2 items-center gap-2 shadow-sm text-sm font-medium">
+             Match yours <ArrowUpRight size={16} />
+           </Link>
 
-           <div className="absolute bottom-8 right-8 flex flex-col gap-3 items-end z-10 hidden md:flex">
+           <div className="absolute bottom-8 right-8 flex-col gap-3 items-end z-10 hidden md:flex">
               <div className="bg-white rounded-full p-1.5 pr-4 flex items-center gap-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] transform -translate-x-12">
                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">C</div>
                  <div className="text-xs leading-tight">
@@ -117,7 +117,7 @@ const HomePage = () => {
              </div>
              
              {/* Small Card 2 */}
-             <div className="bg-gray-800 rounded-[2rem] p-5 lg:p-6 flex flex-col aspect-square relative overflow-hidden group text-gray-900">
+             <div className="bg-gray-800 rounded-[2rem] p-5 lg:p-6 flex flex-col aspect-square relative overflow-hidden group text-white">
                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" alt="Contractor" />
                <div className="relative z-10 inline-flex max-w-max items-center px-4 py-1.5 rounded-full border border-white/20 text-gray-900 text-xs font-medium bg-gray-100 backdrop-blur-sm shadow-sm mb-auto">
                  Force
@@ -157,7 +157,7 @@ const HomePage = () => {
              </div>
              
              <div className="mt-auto z-10">
-                 <h3 className="text-lg font-medium text-gray-900">Courtney Henry</h3>
+                 <h3 className="text-lg font-medium text-white">Courtney Henry</h3>
                  <p className="text-[11px] text-gray-300">SM, London, Great Britain</p>
              </div>
            </div>
@@ -185,7 +185,7 @@ const HomePage = () => {
                 <Button as={Link} to="/career-ai" variant="primary" className="rounded-full h-14 px-8 text-lg font-bold">
                    Try Career AI <ArrowRight size={20} className="ml-2" />
                 </Button>
-                <Button as={Link} to="/resume-builder" variant="outline" className="rounded-full h-14 px-8 text-lg font-bold border-white/20 text-white hover:bg-white/10">
+                <Button as={Link} to="/resume-builder" variant="outline" className="rounded-full h-14 px-8 text-lg font-bold border-white/20 text-white bg-transparent hover:bg-white/10">
                    Resume Builder
                 </Button>
               </div>
@@ -193,17 +193,19 @@ const HomePage = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { title: "Smart Roadmaps", desc: "Interactive AI-generated learning paths.", color: "bg-blue-500/10", icon: <ArrowRight className="text-blue-400" /> },
-                { title: "AI Cover Letters", desc: "Tailored drafts for any job description.", color: "bg-purple-500/10", icon: <Sparkles className="text-purple-400" /> },
-                { title: "Mentor Access", desc: "Connect with experts from top firms.", color: "bg-emerald-500/10", icon: <ArrowUpRight className="text-emerald-400" /> },
-                { title: "Mock Interviews", desc: "Prepare with AI-driven questioning.", color: "bg-orange-500/10", icon: <ArrowRight className="text-orange-400" /> }
+                { title: "Smart Roadmaps", desc: "Interactive AI-generated learning paths.", color: "bg-blue-500/10 border-blue-500/20", icon: <Map className="text-blue-400" size={22} /> },
+                { title: "AI Cover Letters", desc: "Tailored drafts for any job description.", color: "bg-purple-500/10 border-purple-500/20", icon: <FileText className="text-purple-400" size={22} /> },
+                { title: "Mentor Access", desc: "Connect with experts from top firms.", color: "bg-emerald-500/10 border-emerald-500/20", icon: <Users className="text-emerald-400" size={22} /> },
+                { title: "Mock Interviews", desc: "Prepare with AI-driven questioning.", color: "bg-orange-500/10 border-orange-500/20", icon: <Mic className="text-orange-400" size={22} /> }
               ].map((feature, i) => (
-                <div key={i} className={`${feature.color} backdrop-blur-sm border border-white/5 p-6 rounded-3xl group hover:bg-white/10 transition-all`}>
-                   <div className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div key={i} className={`${feature.color} backdrop-blur-md border p-7 rounded-[2rem] group hover:bg-white/10 transition-all flex flex-col justify-between`}>
+                   <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                       {feature.icon}
                    </div>
-                   <h4 className="text-white font-bold mb-1">{feature.title}</h4>
-                   <p className="text-gray-500 text-xs leading-relaxed">{feature.desc}</p>
+                   <div>
+                     <h4 className="text-white font-semibold text-lg mb-2">{feature.title}</h4>
+                     <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
+                   </div>
                 </div>
               ))}
             </div>

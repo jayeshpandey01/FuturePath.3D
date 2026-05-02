@@ -15,10 +15,10 @@ export const SectionHeader = ({
   return (
     <div className={`flex flex-col gap-2 ${alignment}`}>
       {eyebrow ? (
-        <span className="text-xs uppercase tracking-[0.2em] text-black font-semibold">{eyebrow}</span>
+        <span className="text-[11px] uppercase tracking-[0.2em] text-gray-500 font-bold">{eyebrow}</span>
       ) : null}
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight">{title}</h2>
-      {subtitle ? <p className="text-gray-600 max-w-3xl text-sm sm:text-base">{subtitle}</p> : null}
+      <h2 className="text-[1.75rem] sm:text-3xl lg:text-[2.5rem] tracking-tight font-semibold text-gray-900 leading-tight">{title}</h2>
+      {subtitle ? <p className="text-gray-600 max-w-3xl text-[15px] sm:text-base leading-relaxed">{subtitle}</p> : null}
     </div>
   );
 };

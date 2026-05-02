@@ -173,7 +173,7 @@ const Navbar = () => {
                     key={item.to}
                     to={item.to}
                     className={({ isActive }) => 
-                      `px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-gray-50 ${isActive ? "text-black bg-gray-50/50" : "text-gray-600 hover:text-black"}`
+                      `block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-gray-50 ${isActive ? "text-black bg-gray-50/50" : "text-gray-600 hover:text-black"}`
                     }
                     onClick={() => setOpen(false)}
                   >
@@ -192,7 +192,7 @@ const Navbar = () => {
                     key={item.to}
                     to={item.to}
                     className={({ isActive }) => 
-                      `px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-gray-50 ${isActive ? "text-black bg-gray-50/50" : "text-gray-600 hover:text-black"}`
+                      `block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-gray-50 ${isActive ? "text-black bg-gray-50/50" : "text-gray-600 hover:text-black"}`
                     }
                     onClick={() => setOpen(false)}
                   >

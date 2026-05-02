@@ -328,7 +328,7 @@ const DepartmentDetailsPage = () => {
           )}
         </motion.div>
         <motion.div
-          className="glass-panel rounded-2xl border border-gray-200 p-5 space-y-4"
+          className="glass-panel rounded-2xl border border-gray-200 p-5 space-y-4 order-first lg:order-last lg:sticky lg:top-24 h-fit"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
         >

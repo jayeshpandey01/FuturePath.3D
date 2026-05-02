@@ -44,17 +44,17 @@ const CompareCoursesPage = () => {
     menuPortal: (base) => ({ ...base, zIndex: 9999 }),
     control: (base, state) => ({
       ...base,
-      backgroundColor: "var(--surface-card,rgba(115, 243, 255, 0.6))",
-      borderColor: state.isFocused ? "rgba(115, 243, 255, 0.6)" : "rgba(255,255,255,0.08)",
-      boxShadow: state.isFocused ? "0 0 0 2px rgba(115, 243, 255, 0.25)" : "none",
+      backgroundColor: "#F8FAFC",
+      borderColor: state.isFocused ? "#000000" : "#E2E8F0",
+      boxShadow: state.isFocused ? "0 0 0 1px #000000" : "none",
       minHeight: 40,
       borderRadius: 12,
-      ":hover": { borderColor: "rgba(115, 243, 255, 0.6)" },
+      ":hover": { borderColor: "#94A3B8" },
     }),
     menu: (base) => ({
       ...base,
-      backgroundColor: "var(--surface-card, rgba(65, 81, 82, 1))",
-      border: "1px solid rgba(255,255,255,0.08)",
+      backgroundColor: "#ffffff",
+      border: "1px solid #E2E8F0",
       borderRadius: 12,
       overflow: "hidden",
       zIndex: 30,
@@ -67,18 +67,18 @@ const CompareCoursesPage = () => {
     option: (base, state) => ({
       ...base,
       backgroundColor: state.isSelected
-        ? "rgba(115, 243, 255, 0.18)"
+        ? "#F1F5F9"
         : state.isFocused
-          ? "rgba(115, 243, 255, 0.10)"
+          ? "#F8FAFC"
           : "transparent",
-      color: "#000",
+      color: "#0F172A",
       borderRadius: 8,
       padding: "10px 12px",
       cursor: "pointer",
     }),
-    placeholder: (base) => ({ ...base, color: "#000" }),
-    singleValue: (base) => ({ ...base, color: "white" }),
-    input: (base) => ({ ...base, color: "white" }),
+    placeholder: (base) => ({ ...base, color: "#64748B" }),
+    singleValue: (base) => ({ ...base, color: "#0F172A" }),
+    input: (base) => ({ ...base, color: "#0F172A" }),
     dropdownIndicator: (base) => ({ ...base, color: "#000" }),
     indicatorSeparator: () => ({ display: "none" }),
     clearIndicator: (base) => ({ ...base, color: "#000" }),
@@ -170,7 +170,7 @@ const CompareCoursesPage = () => {
           {fields.map((field) => (
             <div key={field.key} className="glass-panel rounded-xl border border-gray-200 p-4 overflow-x-auto">
               <div className="text-sm font-semibold text-gray-900 mb-3">{field.label}</div>
-              <div className="grid gap-3 md:grid-cols-3 min-w-full">
+              <div className="flex md:grid overflow-x-auto snap-x md:snap-none md:grid-cols-3 gap-3 pb-2 min-w-full no-scrollbar">
                 <AnimatePresence>
                   {selectedDeptsBySlot.map((dept, idx) => {
                     if (!dept) {
@@ -180,7 +180,7 @@ const CompareCoursesPage = () => {
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -8 }}
-                          className="min-w-0 rounded-lg bg-gray-50 border border-gray-200 p-4 text-sm text-gray-500 text-center flex flex-col items-center justify-center h-full"
+                          className="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-start rounded-lg bg-gray-50 border border-gray-200 p-4 text-sm text-gray-500 text-center flex flex-col items-center justify-center h-full"
                         >
                           <div className="text-gray-900/80 font-semibold">No department selected</div>
                           <div className="text-[12px] text-neutral-500 mt-1">Choose a department to fill this column.</div>
@@ -196,7 +196,7 @@ const CompareCoursesPage = () => {
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
-                        className="min-w-0 rounded-lg bg-gray-50 border border-gray-200 p-3 text-sm text-gray-700"
+                        className="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-start rounded-lg bg-gray-50 border border-gray-200 p-4 text-sm text-gray-700"
                       >
                         <div className="text-xs uppercase tracking-[0.12em] text-primary mb-1">{dept.name}</div>
                         {isArray ? (
